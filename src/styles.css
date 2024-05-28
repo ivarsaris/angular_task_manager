@@ -33,3 +33,4 @@ html {
 .p-0 {padding: 0 !important;}
 .pl-0 {padding-left: 0 !important;}
 .pr-0 {padding-right: 0 !important;}
+.user {    position: relative;}a.user-select {    position: absolute;    height: 100%;    width: 100%;    left: 0;    top: 0;}.avatar-small {    height: 30px;    width: 30px;}
