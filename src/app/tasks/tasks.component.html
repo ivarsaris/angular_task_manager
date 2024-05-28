@@ -1,0 +1,75 @@
+<div class="card w-100">
+  <div class="card-body">
+    <h5 class="card-title">Implement low tension support Eindhoven</h5>
+    <p class="card-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis
+      facilisis neque. Nunc mattis pretium nisi sed volutpat. Maecenas ac ante
+      sit amet nisi lacinia finibus ut et lorem. Quisque accumsan massa elit, et
+      accumsan augue tempus maximus. Pellentesque dolor ex, ornare nec eleifend
+      et, cursus ac tortor. Praesent luctus auctor lobortis. Cras hendrerit
+      augue tortor. Donec pellentesque hendrerit lectus, quis laoreet lectus
+      convallis eu.
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li
+      class="list-group-item d-flex justify-content-space-between align-center"
+    >
+      <span><strong>Status</strong></span
+      ><span>To do</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-space-between align-center"
+    >
+      <span><strong>Task created</strong></span
+      ><span>26.05.2024</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-space-between align-center"
+    >
+      <span><strong>Task deadline</strong></span
+      ><span>26.06.2024</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-space-between align-center"
+    >
+      <span><strong>Priority</strong></span
+      ><span>Medium</span>
+    </li>
+  </ul>
+  <div class="card-body d-flex align-center space-between gap-4">
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        (click)="expandDropdownMenu('dropdown-menu-status', $event)"
+      >
+        Update status
+      </button>
+      <ul class="dropdown-menu" id="dropdown-menu-status">
+        <li><a class="dropdown-item" href="#">To do</a></li>
+        <li><a class="dropdown-item" href="#">In progress</a></li>
+        <li><a class="dropdown-item" href="#">Under review</a></li>
+        <li><a class="dropdown-item" href="#">done</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        (click)="expandDropdownMenu('dropdown-menu-users', $event)"
+      >
+        Reassign task
+      </button>
+      <ul class="dropdown-menu" id="dropdown-menu-users">
+        <li><a class="dropdown-item" href="#">Piet</a></li>
+        <li><a class="dropdown-item" href="#">Sarah</a></li>
+        <li><a class="dropdown-item" href="#">Luuk</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
