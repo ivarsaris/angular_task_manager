@@ -1,40 +1,32 @@
-<div class="card w-100">
+<div *ngFor="let task of tasks_list" class="card w-100 mb-md">
   <div class="card-body">
-    <h5 class="card-title">Implement low tension support Eindhoven</h5>
-    <p class="card-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis
-      facilisis neque. Nunc mattis pretium nisi sed volutpat. Maecenas ac ante
-      sit amet nisi lacinia finibus ut et lorem. Quisque accumsan massa elit, et
-      accumsan augue tempus maximus. Pellentesque dolor ex, ornare nec eleifend
-      et, cursus ac tortor. Praesent luctus auctor lobortis. Cras hendrerit
-      augue tortor. Donec pellentesque hendrerit lectus, quis laoreet lectus
-      convallis eu.
-    </p>
+    <h5 class="card-title">{{task.title}}</h5>
+    <p class="card-text">{{task.description}}</p>
   </div>
   <ul class="list-group list-group-flush">
     <li
       class="list-group-item d-flex justify-content-space-between align-center"
     >
       <span><strong>Status</strong></span
-      ><span>To do</span>
+      ><span>{{task.status}}</span>
     </li>
     <li
       class="list-group-item d-flex justify-content-space-between align-center"
     >
       <span><strong>Task created</strong></span
-      ><span>26.05.2024</span>
+      ><span>{{task.date_created}}</span>
     </li>
     <li
       class="list-group-item d-flex justify-content-space-between align-center"
     >
       <span><strong>Task deadline</strong></span
-      ><span>26.06.2024</span>
+      ><span>{{task.date_deadline}}</span>
     </li>
     <li
       class="list-group-item d-flex justify-content-space-between align-center"
     >
       <span><strong>Priority</strong></span
-      ><span>Medium</span>
+      ><span>{{task.priority}}</span>
     </li>
   </ul>
   <div class="card-body d-flex align-center space-between gap-4">
