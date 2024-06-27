@@ -1,6 +1,6 @@
 
   <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
+    <div class="container">
       <div class="navbar-brand" href="#">
         <img
           src="assets/to-do-list.png"
@@ -11,5 +11,10 @@
         />
         Task manager
       </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <button class="btn btn-secondary" (click)="createTask()" data-bs-toggle="modal" data-bs-target="#openTaskModal">Create Task</button>
+        </li>
+      </ul>
     </div>
   </nav>
