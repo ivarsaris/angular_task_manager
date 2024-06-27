@@ -1,0 +1,93 @@
+<!-- The Modal -->
+<div
+  class="modal fade"
+  id="openTaskModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  #openTaskModal
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ng-container *ngIf="newTask === false; else newTaskHeader">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+        </ng-container>
+        <ng-template #newTaskHeader>
+          <h5 class="modal-title" id="exampleModalLabel">Create new task</h5>
+        </ng-template>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><p>{{openTaskData.id}}</p></li>
+                    <li
+                    class="list-group-item"
+                  >
+                  <label for="task-title"><strong>Name</strong></label>
+                  <input class="modal-input w-100" type="text" name="task-title" id="task-title" [value]="openTaskData.title" #taskNameInput>
+                  </li>
+                  <li
+                    class="list-group-item"
+                  >
+                  <label for="task-description"><strong>Description</strong></label>
+                  <textarea #taskDescriptionInput name="task-description" id="task-description" rows="4" cols="40">{{openTaskData.description}}</textarea>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-space-between align-center"
+                  >
+                  <label for="task-status"><strong>Status</strong></label>
+                  <select #taskStatusInput class="modal-input" name="task-status" id="task-status">
+                    <ng-container *ngFor="let status of statuses_list">
+                        <option [value]="status" [selected]="status === openTaskData.status">{{ status }}</option>
+                    </ng-container>
+                  </select>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-space-between align-center"
+                  >
+                  <label for="task-created"><strong>Date created</strong></label>
+                  <input #taskDateCreatedInput class="modal-input" type="text" name="task-created" id="task-created" [value]="openTaskData.date_created">
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-space-between align-center"
+                  >
+                  <label for="task-deadline"><strong>Deadline</strong></label>
+                  <input #taskDateDeadlineInput class="modal-input" type="text" name="task-deadline" id="task-deadline" [value]="openTaskData.date_deadline">
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-space-between align-center"
+                  >
+                  <label for="task-priority"><strong>Priority</strong></label>
+                  <select #taskPriorityInput class="modal-input" name="task-priority" id="task-priority">
+                    <ng-container *ngFor="let priority of priorities_list">
+                        <option [value]="priority" [selected]="priority === openTaskData.priority">{{ priority }}</option>
+                    </ng-container>
+                  </select>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-space-between align-center"
+                  >
+                  <label for="task-assignee"><strong>Assigned to</strong></label>
+                  <select #taskAssigneeInput class="modal-input" name="task-assignee" id="task-assignee">
+                  <ng-container *ngFor="let user of users_list">
+                        <option [value]="user.id" [selected]="user.id === openTaskData.assignee_id">{{ user.name }}</option>
+                  </ng-container>
+                  </select>
+                  </li>
+                </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="deleteOpenTask()">
+          Delete task
+        </button>
+        <button type="button" class="btn btn-primary" (click)="updateOpenTask()" data-bs-dismiss="modal">{{ updateButtonText }} task</button>
+      </div>
+    </div>
+  </div>
+</div>
