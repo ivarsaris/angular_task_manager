@@ -1,0 +1,1 @@
+export const statuses_list = ['Blocked', 'To do', 'In progress', 'Under review', 'Done'];
