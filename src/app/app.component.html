@@ -1,14 +1,16 @@
 <header>
-<app-header></app-header>
+<app-header (createNewTaskEvent)="onCreateTask($event)"></app-header>
 </header>
 
 <div class="container mt-lg">
+  <app-open-task [newTask]="newTask" [openTask]="editTaskId"></app-open-task>
+  <app-edit-user (setUnassignedActive)="onSetUnassignedActive($event)" [newUser]="newUser" [edit_user_id]="edit_user_id"></app-edit-user>
   <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <app-users></app-users>
+    <div class="col-xs-12 col-md-3">
+      <app-users (newUser)="onNewUser($event)" (editUserId)="onEditUser($event)" (select)="onSelectUser($event)" [selected_user]="selected_user"></app-users>
     </div>
-    <div class="col-xs-12 col-md-8">
-      <app-tasks></app-tasks>
+    <div class="col-xs-12 col-md-9">
+      <app-tasks (editTaskId)="onOpenEditTask($event)" [selected_user]="selected_user"></app-tasks>
     </div>
   </div>
 </div>
