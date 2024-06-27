@@ -1,6 +1,7 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { users_list } from './users.list';
+
 
 @Component({
   selector: 'app-users',
@@ -11,9 +12,21 @@ import { users_list } from './users.list';
 })
 export class UsersComponent {
   users_list = users_list;
-  selected_user: number = 1;
+  @Input() selected_user!: number;
+  select = output<number>();
+  editUserId = output<number>();
+  newUser = output<boolean>();
 
   selectUser(id: number) {
-    this.selected_user = id;
+    this.select.emit(id);
+  }
+
+  editUser(id: number) {
+    this.editUserId.emit(id);
+    this.newUser.emit(false);
+  }
+
+  createUser() {
+    this.newUser.emit(true);
   }
 }

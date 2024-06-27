@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li *ngFor="let user of users_list" [ngClass]="{'active': user.id === selected_user}" class="list-group-item user d-flex align-items-center gap-3">
+  <li *ngFor="let user of users_list" [ngClass]="{'active': user.id === selected_user, 'last-item': user.id === 0}" class="list-group-item user d-flex align-items-center gap-3">
     <a (click)="selectUser(user.id)" href="#" class="user-select"></a>
     <img
       class="avatar-small"
@@ -7,5 +7,7 @@
       [alt]="user.name"
     />
     <span class="name">{{user.name}}</span>
+    <a class="user-edit" href="#" (click)="editUser(user.id)" data-bs-toggle="modal" data-bs-target="#editUserModal"><i class="bi bi-pencil-square"></i></a>
   </li>
 </ul>
+<button class="btn btn-primary mt-lg w-100" (click)="createUser()" data-bs-toggle="modal" data-bs-target="#editUserModal">Create user</button>
